@@ -3,6 +3,7 @@ import { Button } from './ui/button'
 import { useForm } from '@mantine/form'
 import { Label } from '@radix-ui/react-label'
 import { Textarea } from './ui/textarea'
+import { router } from '@inertiajs/react'
 
 export default function ContactForm() {
   const form = useForm({
@@ -24,7 +25,10 @@ export default function ContactForm() {
   return (
     <>
       <form
-        onSubmit={form.onSubmit((values) => console.log(values))}
+        onSubmit={form.onSubmit((values) => {
+          form.reset()
+          router.post('/', values)
+        })}
         className="absolute w-full p-10 flex flex-col gap-4"
       >
         <div className="flex w-full gap-4">

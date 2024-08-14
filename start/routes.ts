@@ -7,5 +7,8 @@
 |
 */
 
+const HomeController = () => import('#controllers/home.controller')
 import router from '@adonisjs/core/services/router'
-router.on('/').renderInertia('home')
+
+router.get('/', [HomeController, 'index'])
+router.post('/', [HomeController, 'contact'])

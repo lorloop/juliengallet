@@ -7,11 +7,28 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '~/components/ui/accordion'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '~/components/ui/dialog'
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card'
 import { Separator } from '~/components/ui/separator'
 import cv from '~/assets/img/cv.jpeg'
-import { Link } from '@inertiajs/react'
 import ShineBorder from '~/components/magicui/shine-border'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '~/components/ui/carousel'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '~/components/ui/tabs'
+import portfolio1 from '~/assets/img/projects/portfolio/portfolio_1.png'
+import portfolio2 from '~/assets/img/projects/portfolio/portfolio_2.png'
 
 export default function Home() {
   return (
@@ -210,16 +227,98 @@ export default function Home() {
         <section className="mt-16 m-6" id="realisations">
           <p className="text-center text-2xl text-primary">Mes réalisations</p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Card className="w-1/4">
-              <Link href="/">
-                <CardHeader>
-                  <CardTitle>Portfolio</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <img src={cv} alt="Illustration portfolio" />
-                </CardContent>
-              </Link>
-            </Card>
+            <Dialog>
+              <Card className="w-1/4">
+                <DialogTrigger>
+                  <a>
+                    <CardHeader>
+                      <CardTitle>Portfolio</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <img src={cv} alt="Illustration portfolio" />
+                    </CardContent>
+                  </a>
+                </DialogTrigger>
+              </Card>
+              <DialogContent className="w-9/12">
+                <DialogHeader>
+                  <DialogTitle>Portfolio</DialogTitle>
+                  <DialogDescription>
+                    <div className="flex justify-center my-4">
+                      <Carousel className="w-9/12">
+                        <CarouselContent>
+                          <CarouselItem>
+                            <img src={portfolio1} alt="Capture du portfolio 1" />
+                          </CarouselItem>
+                          <CarouselItem>
+                            <img src={portfolio2} alt="Capture du portfolio 2" />
+                          </CarouselItem>
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                      </Carousel>
+                    </div>
+                    <div className="flex justify-center my-6">
+                      <Tabs defaultValue="description" className="w-1/2">
+                        <TabsList className="grid w-full grid-cols-2">
+                          <TabsTrigger value="description">Description</TabsTrigger>
+                          <TabsTrigger value="stack">Stack</TabsTrigger>
+                        </TabsList>
+                        <TabsContent value="description">
+                          <p className="text-base italic">
+                            Le portfolio que vous êtes entrain de consulter.
+                          </p>
+                        </TabsContent>
+                        <TabsContent value="stack">
+                          <div className="flex flex-wrap gap-3 justify-center items-center">
+                            <img
+                              className="w-8"
+                              src="inertia/assets/img/logo-adonis.png"
+                              alt="AdonisJS logo"
+                            />
+                            <img
+                              className="w-8"
+                              src="inertia/assets/img/logo-inertia.png"
+                              alt="Inertia logo"
+                            />
+                            <img
+                              className="w-8"
+                              src="inertia/assets/img/logo-react.png"
+                              alt="React logo"
+                            />
+                            <img
+                              className="w-8"
+                              src="inertia/assets/img/logo-typescript.png"
+                              alt="Typescript logo"
+                            />
+                            <img
+                              className="w-8"
+                              src="inertia/assets/img/logo-tailwind.png"
+                              alt="Tailwind CSS logo"
+                            />
+                            <img
+                              className="w-8"
+                              src="inertia/assets/img/logo-shadcn.png"
+                              alt="Shadcn UI logo"
+                            />
+                            <img
+                              className="w-8"
+                              src="inertia/assets/img/logo-magic-ui.png"
+                              alt="Magic UI logo"
+                            />
+                            <img
+                              className="w-8"
+                              src="inertia/assets/img/logo-mysql.png"
+                              alt="MySQL logo"
+                            />
+                          </div>
+                        </TabsContent>
+                      </Tabs>
+                    </div>
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
           </div>
         </section>
         <section className="mt-16" id="contact">
