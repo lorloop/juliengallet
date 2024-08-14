@@ -1,5 +1,6 @@
 import Footer from '~/components/footer'
 import Header from '~/components/header'
+import ContactForm from '~/components/contact_form'
 import {
   Accordion,
   AccordionContent,
@@ -10,6 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card'
 import { Separator } from '~/components/ui/separator'
 import cv from '~/assets/img/cv.jpeg'
 import { Link } from '@inertiajs/react'
+import ShineBorder from '~/components/magicui/shine-border'
 
 export default function Home() {
   return (
@@ -223,11 +225,11 @@ export default function Home() {
         <section className="mt-16" id="contact">
           <p className="text-center text-2xl text-primary">Me contacter</p>
           <div className="mt-10">
-            <Card className="w-4/5 m-auto">
-              <CardContent>
-                <p>Insérez formulaire ici !</p>
-              </CardContent>
-            </Card>
+            <ShineBorder
+              className="relative h-[400px] w-4/5 m-auto overflow-hidden rounded-lg border bg-background md:shadow-xl"
+              color={['#A07CFE', '#FE8FB5', '#FFBE7B']}
+              children={<ContactForm />}
+            ></ShineBorder>
           </div>
         </section>
       </main>
