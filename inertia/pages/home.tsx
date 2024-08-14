@@ -17,7 +17,6 @@ import {
 } from '~/components/ui/dialog'
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card'
 import { Separator } from '~/components/ui/separator'
-import cv from '~/assets/img/cv.jpeg'
 import ShineBorder from '~/components/magicui/shine-border'
 import {
   Carousel,
@@ -27,6 +26,33 @@ import {
   CarouselPrevious,
 } from '~/components/ui/carousel'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '~/components/ui/tabs'
+import avatar from '~/assets/img/profile.png'
+import logoAdonis from '~/assets/img/logo-adonis.png'
+import logoAngular from '~/assets/img/logo-angular.png'
+import logoCss from '~/assets/img/logo-css.png'
+import logoDocker from '~/assets/img/logo-docker.png'
+import logoGit from '~/assets/img/logo-git.png'
+import logoGithub from '~/assets/img/logo-github.png'
+import logoHomeassistant from '~/assets/img/logo-homeassistant.png'
+import logoHtml from '~/assets/img/logo-html.png'
+import logoInertia from '~/assets/img/logo-inertia.png'
+import logoJs from '~/assets/img/logo-js.png'
+import logoMagicUi from '~/assets/img/logo-magic-ui.png'
+import logoMysql from '~/assets/img/logo-mysql.png'
+import logoNode from '~/assets/img/logo-node.png'
+import logoNpm from '~/assets/img/logo-npm.png'
+import logoPostgres from '~/assets/img/logo-postgres.png'
+import logoProxmox from '~/assets/img/logo-proxmox.png'
+import logoPython from '~/assets/img/logo-python.png'
+import logoReact from '~/assets/img/logo-react.png'
+import logoSass from '~/assets/img/logo-sass.png'
+import logoShadcn from '~/assets/img/logo-shadcn.png'
+import logoSql from '~/assets/img/logo-sql.png'
+import logoTailwind from '~/assets/img/logo-tailwind.png'
+import logoTypescript from '~/assets/img/logo-typescript.png'
+import logoVscode from '~/assets/img/logo-vscode.png'
+import logoZ2m from '~/assets/img/logo-z2m.png'
+import cv from '~/assets/img/cv.jpeg'
 import portfolio1 from '~/assets/img/projects/portfolio/portfolio_1.png'
 import portfolio2 from '~/assets/img/projects/portfolio/portfolio_2.png'
 
@@ -59,7 +85,7 @@ export default function Home() {
             </p>
           </article>
           <div className="w-3/5 rounded-md shadow-2xl overflow-hidden">
-            <img src="inertia/assets/img/IMG_0032.JPG" alt="avatar" />
+            <img src={avatar} alt="avatar" />
           </div>
         </section>
 
@@ -90,70 +116,30 @@ export default function Home() {
                   D'une page statique à un site dynamique
                 </p>
                 <div className="flex gap-1 justify-center items-center mt-4">
-                  <img className="w-8" src="inertia/assets/img/logo-html.png" alt="HTML logo" />
-                  <img className="w-8" src="inertia/assets/img/logo-css.png" alt="CSS logo" />
-                  <img className="w-8" src="inertia/assets/img/logo-sass.png" alt="Sass logo" />
-                  <img className="w-8" src="inertia/assets/img/logo-js.png" alt="Javascript logo" />
-                  <img className="w-8" src="inertia/assets/img/logo-python.png" alt="Python logo" />
-                  <img className="w-8" src="inertia/assets/img/logo-sql.png" alt="SQL logo" />
-                  <img className="w-8" src="inertia/assets/img/logo-git.png" alt="Git logo" />
+                  <img className="w-8" src={logoHtml} alt="HTML logo" />
+                  <img className="w-8" src={logoCss} alt="CSS logo" />
+                  <img className="w-8" src={logoSass} alt="Sass logo" />
+                  <img className="w-8" src={logoJs} alt="Javascript logo" />
+                  <img className="w-8" src={logoPython} alt="Python logo" />
+                  <img className="w-8" src={logoSql} alt="SQL logo" />
+                  <img className="w-8" src={logoGit} alt="Git logo" />
                 </div>
                 <Accordion className="mt-4" type="single" collapsible>
                   <AccordionItem value="item-1">
                     <AccordionTrigger>Outils de développement</AccordionTrigger>
                     <AccordionContent>
                       <div className="flex flex-wrap gap-2 justify-center items-center mt-4">
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-vscode.png"
-                          alt="VS Code logo"
-                        />
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-github.png"
-                          alt="Github logo"
-                        />
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-node.png"
-                          alt="NodeJs logo"
-                        />
-                        <img className="w-8" src="inertia/assets/img/logo-npm.png" alt="NPM logo" />
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-adonis.png"
-                          alt="AdonisJS logo"
-                        />
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-react.png"
-                          alt="React logo"
-                        />
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-angular.png"
-                          alt="Angular logo"
-                        />
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-tailwind.png"
-                          alt="Tailwind CSS logo"
-                        />
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-mysql.png"
-                          alt="MySQL logo"
-                        />
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-postgres.png"
-                          alt="PostgreSQL logo"
-                        />
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-docker.png"
-                          alt="Docker logo"
-                        />
+                        <img className="w-8" src={logoVscode} alt="VS Code logo" />
+                        <img className="w-8" src={logoGithub} alt="Github logo" />
+                        <img className="w-8" src={logoNode} alt="NodeJs logo" />
+                        <img className="w-8" src={logoNpm} alt="NPM logo" />
+                        <img className="w-8" src={logoAdonis} alt="AdonisJS logo" />
+                        <img className="w-8" src={logoReact} alt="React logo" />
+                        <img className="w-8" src={logoAngular} alt="Angular logo" />
+                        <img className="w-8" src={logoTailwind} alt="Tailwind CSS logo" />
+                        <img className="w-8" src={logoMysql} alt="MySQL logo" />
+                        <img className="w-8" src={logoPostgres} alt="PostgreSQL logo" />
+                        <img className="w-8" src={logoDocker} alt="Docker logo" />
                       </div>
                     </AccordionContent>
                   </AccordionItem>
@@ -163,31 +149,11 @@ export default function Home() {
                     <AccordionTrigger>Stack ♥️</AccordionTrigger>
                     <AccordionContent>
                       <div className="flex flex-wrap gap-1 justify-center items-center mt-4">
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-adonis.png"
-                          alt="AdonisJS logo"
-                        />
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-inertia.png"
-                          alt="Inertia logo"
-                        />
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-react.png"
-                          alt="React logo"
-                        />
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-tailwind.png"
-                          alt="Tailwind CSS logo"
-                        />
-                        <img
-                          className="w-8"
-                          src="inertia/assets/img/logo-mysql.png"
-                          alt="MySQL logo"
-                        />
+                        <img className="w-8" src={logoAdonis} alt="AdonisJS logo" />
+                        <img className="w-8" src={logoInertia} alt="Inertia logo" />
+                        <img className="w-8" src={logoReact} alt="React logo" />
+                        <img className="w-8" src={logoTailwind} alt="Tailwind CSS logo" />
+                        <img className="w-8" src={logoMysql} alt="MySQL logo" />
                       </div>
                     </AccordionContent>
                   </AccordionItem>
@@ -198,17 +164,9 @@ export default function Home() {
                 <h2 className="text-center text-xl mb-2">Hobbies</h2>
                 <p className="text-center text-xs italic">Ce que j'aime faire le dimanche</p>
                 <div className="flex gap-1 justify-center items-center mt-4">
-                  <img
-                    className="w-8"
-                    src="inertia/assets/img/logo-proxmox.png"
-                    alt="Proxmox logo"
-                  />
-                  <img
-                    className="w-8"
-                    src="inertia/assets/img/logo-homeassistant.png"
-                    alt="HA logo"
-                  />
-                  <img className="w-8" src="inertia/assets/img/logo-z2m.png" alt="Z2M logo" />
+                  <img className="w-8" src={logoProxmox} alt="Proxmox logo" />
+                  <img className="w-8" src={logoHomeassistant} alt="HA logo" />
+                  <img className="w-8" src={logoZ2m} alt="Z2M logo" />
                 </div>
                 <p className="mt-4 text-xs">
                   Vous l'aurez compris, je m'intéresse à beaucoup de choses dans le domaine de l'IT.
@@ -271,46 +229,14 @@ export default function Home() {
                         </TabsContent>
                         <TabsContent value="stack">
                           <div className="flex flex-wrap gap-3 justify-center items-center">
-                            <img
-                              className="w-8"
-                              src="inertia/assets/img/logo-adonis.png"
-                              alt="AdonisJS logo"
-                            />
-                            <img
-                              className="w-8"
-                              src="inertia/assets/img/logo-inertia.png"
-                              alt="Inertia logo"
-                            />
-                            <img
-                              className="w-8"
-                              src="inertia/assets/img/logo-react.png"
-                              alt="React logo"
-                            />
-                            <img
-                              className="w-8"
-                              src="inertia/assets/img/logo-typescript.png"
-                              alt="Typescript logo"
-                            />
-                            <img
-                              className="w-8"
-                              src="inertia/assets/img/logo-tailwind.png"
-                              alt="Tailwind CSS logo"
-                            />
-                            <img
-                              className="w-8"
-                              src="inertia/assets/img/logo-shadcn.png"
-                              alt="Shadcn UI logo"
-                            />
-                            <img
-                              className="w-8"
-                              src="inertia/assets/img/logo-magic-ui.png"
-                              alt="Magic UI logo"
-                            />
-                            <img
-                              className="w-8"
-                              src="inertia/assets/img/logo-mysql.png"
-                              alt="MySQL logo"
-                            />
+                            <img className="w-8" src={logoAdonis} alt="AdonisJS logo" />
+                            <img className="w-8" src={logoInertia} alt="Inertia logo" />
+                            <img className="w-8" src={logoReact} alt="React logo" />
+                            <img className="w-8" src={logoTypescript} alt="Typescript logo" />
+                            <img className="w-8" src={logoTailwind} alt="Tailwind CSS logo" />
+                            <img className="w-8" src={logoShadcn} alt="Shadcn UI logo" />
+                            <img className="w-8" src={logoMagicUi} alt="Magic UI logo" />
+                            <img className="w-8" src={logoMysql} alt="MySQL logo" />
                           </div>
                         </TabsContent>
                       </Tabs>
