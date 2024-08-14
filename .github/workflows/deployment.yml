@@ -1,0 +1,53 @@
+name: Build and Deploy Julien GALLET Application
+
+on:
+  push:
+    branches:
+      - master
+      - preprod
+  pull_request:
+    branches:
+      - master
+      - preprod
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Prepare Artifacts for Deployment
+        run: |
+          mkdir deployment
+          cp -R build/* deployment/
+
+      - name: Determine Deployment Path
+        id: deployment_path
+        run: |
+          if [[ $GITHUB_REF == refs/heads/master ]]; then
+            echo "DEPLOYMENT_PATH=juliengallet.fr/" >> $GITHUB_ENV
+          elif [[ $GITHUB_REF == refs/heads/preprod ]]; then
+            echo "DEPLOYMENT_PATH=preprod.juliengallet.fr/" >> $GITHUB_ENV
+          fi
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./deployment/
+          server-dir: ${{ env.DEPLOYMENT_PATH }}
