@@ -16,7 +16,6 @@ import {
   DialogTrigger,
 } from '~/components/ui/dialog'
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card'
-import { Separator } from '~/components/ui/separator'
 import ShineBorder from '~/components/magicui/shine-border'
 import {
   Carousel,
@@ -65,7 +64,7 @@ export default function Home() {
           Consultant logiciel, développeur web & passionné d'IT
         </h1>
 
-        <section className="flex gap-12 items-center mt-16 m-6">
+        <section className="flex flex-col-reverse gap-12 items-center mt-16 m-6 md:flex-row">
           <article className="text-justify text-sm text-wrap space-y-2">
             <p>Salut 👋</p>
             <p>
@@ -89,10 +88,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mt-16">
-          <Card className="w-4/5 m-auto">
+        <section className="flex flex-col items-center gap-5 mt-16 md:flex-row md:items-stretch">
+          <Card className="w-5/6 md:w-1/3">
             <CardContent className="flex justify-center p-4">
-              <div className="w-1/3">
+              <div>
                 <h2 className="text-center text-xl mb-2">Consulting</h2>
                 <p className="text-center text-xs italic">
                   Du simple dépannage à l'audit de valorisation
@@ -109,37 +108,40 @@ export default function Home() {
                   <li>Audit de valorisation des solutions en place</li>
                 </ul>
               </div>
-              <Separator orientation="vertical" className="h-auto ml-3 mr-3" />
-              <div className="w-1/3">
+            </CardContent>
+          </Card>
+          <Card className="w-5/6 md:w-1/3">
+            <CardContent className="flex justify-center p-4">
+              <div>
                 <h2 className="text-center text-xl mb-2">Développement</h2>
                 <p className="text-center text-xs italic">
                   D'une page statique à un site dynamique
                 </p>
-                <div className="flex gap-1 justify-center items-center mt-4">
-                  <img className="w-8" src={logoHtml} alt="HTML logo" />
-                  <img className="w-8" src={logoCss} alt="CSS logo" />
-                  <img className="w-8" src={logoSass} alt="Sass logo" />
-                  <img className="w-8" src={logoJs} alt="Javascript logo" />
-                  <img className="w-8" src={logoPython} alt="Python logo" />
-                  <img className="w-8" src={logoSql} alt="SQL logo" />
-                  <img className="w-8" src={logoGit} alt="Git logo" />
+                <div className="flex flex-wrap gap-1 justify-center items-center mt-4">
+                  <img className="w-6" src={logoHtml} alt="HTML logo" />
+                  <img className="w-6" src={logoCss} alt="CSS logo" />
+                  <img className="w-6" src={logoSass} alt="Sass logo" />
+                  <img className="w-6" src={logoJs} alt="Javascript logo" />
+                  <img className="w-6" src={logoPython} alt="Python logo" />
+                  <img className="w-6" src={logoSql} alt="SQL logo" />
+                  <img className="w-6" src={logoGit} alt="Git logo" />
                 </div>
                 <Accordion className="mt-4" type="single" collapsible>
                   <AccordionItem value="item-1">
                     <AccordionTrigger>Outils de développement</AccordionTrigger>
                     <AccordionContent>
                       <div className="flex flex-wrap gap-2 justify-center items-center mt-4">
-                        <img className="w-8" src={logoVscode} alt="VS Code logo" />
-                        <img className="w-8" src={logoGithub} alt="Github logo" />
-                        <img className="w-8" src={logoNode} alt="NodeJs logo" />
-                        <img className="w-8" src={logoNpm} alt="NPM logo" />
-                        <img className="w-8" src={logoAdonis} alt="AdonisJS logo" />
-                        <img className="w-8" src={logoReact} alt="React logo" />
-                        <img className="w-8" src={logoAngular} alt="Angular logo" />
-                        <img className="w-8" src={logoTailwind} alt="Tailwind CSS logo" />
-                        <img className="w-8" src={logoMysql} alt="MySQL logo" />
-                        <img className="w-8" src={logoPostgres} alt="PostgreSQL logo" />
-                        <img className="w-8" src={logoDocker} alt="Docker logo" />
+                        <img className="w-6" src={logoVscode} alt="VS Code logo" />
+                        <img className="w-6" src={logoGithub} alt="Github logo" />
+                        <img className="w-6" src={logoNode} alt="NodeJs logo" />
+                        <img className="w-6" src={logoNpm} alt="NPM logo" />
+                        <img className="w-6" src={logoAdonis} alt="AdonisJS logo" />
+                        <img className="w-6" src={logoReact} alt="React logo" />
+                        <img className="w-6" src={logoAngular} alt="Angular logo" />
+                        <img className="w-6" src={logoTailwind} alt="Tailwind CSS logo" />
+                        <img className="w-6" src={logoMysql} alt="MySQL logo" />
+                        <img className="w-6" src={logoPostgres} alt="PostgreSQL logo" />
+                        <img className="w-6" src={logoDocker} alt="Docker logo" />
                       </div>
                     </AccordionContent>
                   </AccordionItem>
@@ -149,24 +151,27 @@ export default function Home() {
                     <AccordionTrigger>Stack ♥️</AccordionTrigger>
                     <AccordionContent>
                       <div className="flex flex-wrap gap-1 justify-center items-center mt-4">
-                        <img className="w-8" src={logoAdonis} alt="AdonisJS logo" />
-                        <img className="w-8" src={logoInertia} alt="Inertia logo" />
-                        <img className="w-8" src={logoReact} alt="React logo" />
-                        <img className="w-8" src={logoTailwind} alt="Tailwind CSS logo" />
-                        <img className="w-8" src={logoMysql} alt="MySQL logo" />
+                        <img className="w-6" src={logoAdonis} alt="AdonisJS logo" />
+                        <img className="w-6" src={logoInertia} alt="Inertia logo" />
+                        <img className="w-6" src={logoReact} alt="React logo" />
+                        <img className="w-6" src={logoTailwind} alt="Tailwind CSS logo" />
+                        <img className="w-6" src={logoMysql} alt="MySQL logo" />
                       </div>
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
               </div>
-              <Separator orientation="vertical" className="h-auto ml-3 mr-3" />
-              <div className="w-1/3">
+            </CardContent>
+          </Card>
+          <Card className="w-5/6 md:w-1/3">
+            <CardContent className="flex justify-center p-4">
+              <div>
                 <h2 className="text-center text-xl mb-2">Hobbies</h2>
                 <p className="text-center text-xs italic">Ce que j'aime faire le dimanche</p>
                 <div className="flex gap-1 justify-center items-center mt-4">
-                  <img className="w-8" src={logoProxmox} alt="Proxmox logo" />
-                  <img className="w-8" src={logoHomeassistant} alt="HA logo" />
-                  <img className="w-8" src={logoZ2m} alt="Z2M logo" />
+                  <img className="w-6" src={logoProxmox} alt="Proxmox logo" />
+                  <img className="w-6" src={logoHomeassistant} alt="HA logo" />
+                  <img className="w-6" src={logoZ2m} alt="Z2M logo" />
                 </div>
                 <p className="mt-4 text-xs">
                   Vous l'aurez compris, je m'intéresse à beaucoup de choses dans le domaine de l'IT.
@@ -184,9 +189,9 @@ export default function Home() {
         </section>
         <section className="mt-16 m-6" id="realisations">
           <p className="text-center text-2xl text-primary">Mes réalisations</p>
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-10 flex justify-center flex-wrap gap-3 md:justify-normal">
             <Dialog>
-              <Card className="w-1/4">
+              <Card className="w-2/4 md:w-1/4">
                 <DialogTrigger>
                   <a>
                     <CardHeader>
@@ -217,26 +222,34 @@ export default function Home() {
                       </Carousel>
                     </div>
                     <div className="flex justify-center my-6">
-                      <Tabs defaultValue="description" className="w-1/2">
+                      <Tabs defaultValue="description" className="md:w-1/2">
                         <TabsList className="grid w-full grid-cols-2">
                           <TabsTrigger value="description">Description</TabsTrigger>
                           <TabsTrigger value="stack">Stack</TabsTrigger>
                         </TabsList>
                         <TabsContent value="description">
-                          <p className="text-base italic">
+                          <p className="text-xs md:text-base italic">
                             Le portfolio que vous êtes entrain de consulter.
                           </p>
                         </TabsContent>
                         <TabsContent value="stack">
                           <div className="flex flex-wrap gap-3 justify-center items-center">
-                            <img className="w-8" src={logoAdonis} alt="AdonisJS logo" />
-                            <img className="w-8" src={logoInertia} alt="Inertia logo" />
-                            <img className="w-8" src={logoReact} alt="React logo" />
-                            <img className="w-8" src={logoTypescript} alt="Typescript logo" />
-                            <img className="w-8" src={logoTailwind} alt="Tailwind CSS logo" />
-                            <img className="w-8" src={logoShadcn} alt="Shadcn UI logo" />
-                            <img className="w-8" src={logoMagicUi} alt="Magic UI logo" />
-                            <img className="w-8" src={logoMysql} alt="MySQL logo" />
+                            <img className="w-6 md:w-8" src={logoAdonis} alt="AdonisJS logo" />
+                            <img className="w-6 md:w-8" src={logoInertia} alt="Inertia logo" />
+                            <img className="w-6 md:w-8" src={logoReact} alt="React logo" />
+                            <img
+                              className="w-6 md:w-8"
+                              src={logoTypescript}
+                              alt="Typescript logo"
+                            />
+                            <img
+                              className="w-6 md:w-8"
+                              src={logoTailwind}
+                              alt="Tailwind CSS logo"
+                            />
+                            <img className="w-6 md:w-8" src={logoShadcn} alt="Shadcn UI logo" />
+                            <img className="w-6 md:w-8" src={logoMagicUi} alt="Magic UI logo" />
+                            <img className="w-6 md:w-8" src={logoMysql} alt="MySQL logo" />
                           </div>
                         </TabsContent>
                       </Tabs>
@@ -251,7 +264,7 @@ export default function Home() {
           <p className="text-center text-2xl text-primary">Me contacter</p>
           <div className="mt-10">
             <ShineBorder
-              className="relative h-[400px] w-4/5 m-auto overflow-hidden rounded-lg border bg-background md:shadow-xl"
+              className="relative h-[550px] md:h-[400px] w-4/5 m-auto overflow-hidden rounded-lg border bg-background md:shadow-xl"
               color={['#A07CFE', '#FE8FB5', '#FFBE7B']}
               children={<ContactForm />}
             ></ShineBorder>
