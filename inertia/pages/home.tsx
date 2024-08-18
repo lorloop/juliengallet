@@ -7,14 +7,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '~/components/ui/accordion'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '~/components/ui/dialog'
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card'
 import ShineBorder from '~/components/magicui/shine-border'
 import {
@@ -51,7 +43,6 @@ import logoTailwind from '~/assets/img/logo-tailwind.png'
 import logoTypescript from '~/assets/img/logo-typescript.png'
 import logoVscode from '~/assets/img/logo-vscode.png'
 import logoZ2m from '~/assets/img/logo-z2m.png'
-import cv from '~/assets/img/cv.jpeg'
 import portfolio1 from '~/assets/img/projects/portfolio/portfolio_1.png'
 import portfolio2 from '~/assets/img/projects/portfolio/portfolio_2.png'
 
@@ -187,77 +178,55 @@ export default function Home() {
             </CardContent>
           </Card>
         </section>
-        <section className="mt-16 m-6" id="realisations">
+        <section className="mt-16" id="realisations">
           <p className="text-center text-2xl text-primary">Mes réalisations</p>
           <div className="mt-10 flex justify-center flex-wrap gap-3 md:justify-normal">
-            <Dialog>
-              <Card className="w-2/4 md:w-1/4">
-                <DialogTrigger>
-                  <a>
-                    <CardHeader>
-                      <CardTitle>Portfolio</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <img src={cv} alt="Illustration portfolio" />
-                    </CardContent>
-                  </a>
-                </DialogTrigger>
-              </Card>
-              <DialogContent className="w-9/12">
-                <DialogHeader>
-                  <DialogTitle>Portfolio</DialogTitle>
-                  <DialogDescription>
-                    <div className="flex justify-center my-4">
-                      <Carousel className="w-9/12">
-                        <CarouselContent>
-                          <CarouselItem>
-                            <img src={portfolio1} alt="Capture du portfolio 1" />
-                          </CarouselItem>
-                          <CarouselItem>
-                            <img src={portfolio2} alt="Capture du portfolio 2" />
-                          </CarouselItem>
-                        </CarouselContent>
-                        <CarouselPrevious />
-                        <CarouselNext />
-                      </Carousel>
-                    </div>
-                    <div className="flex justify-center my-6">
-                      <Tabs defaultValue="description" className="md:w-1/2">
-                        <TabsList className="grid w-full grid-cols-2">
-                          <TabsTrigger value="description">Description</TabsTrigger>
-                          <TabsTrigger value="stack">Stack</TabsTrigger>
-                        </TabsList>
-                        <TabsContent value="description">
-                          <p className="text-xs md:text-base italic">
-                            Le portfolio que vous êtes entrain de consulter.
-                          </p>
-                        </TabsContent>
-                        <TabsContent value="stack">
-                          <div className="flex flex-wrap gap-3 justify-center items-center">
-                            <img className="w-6 md:w-8" src={logoAdonis} alt="AdonisJS logo" />
-                            <img className="w-6 md:w-8" src={logoInertia} alt="Inertia logo" />
-                            <img className="w-6 md:w-8" src={logoReact} alt="React logo" />
-                            <img
-                              className="w-6 md:w-8"
-                              src={logoTypescript}
-                              alt="Typescript logo"
-                            />
-                            <img
-                              className="w-6 md:w-8"
-                              src={logoTailwind}
-                              alt="Tailwind CSS logo"
-                            />
-                            <img className="w-6 md:w-8" src={logoShadcn} alt="Shadcn UI logo" />
-                            <img className="w-6 md:w-8" src={logoMagicUi} alt="Magic UI logo" />
-                            <img className="w-6 md:w-8" src={logoMysql} alt="MySQL logo" />
-                          </div>
-                        </TabsContent>
-                      </Tabs>
-                    </div>
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
+            <Card className="w-5/6 md:w-1/2">
+              <CardHeader>
+                <CardTitle>Portfolio</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex justify-center my-4">
+                  <Carousel className="w-9/12">
+                    <CarouselContent>
+                      <CarouselItem>
+                        <img src={portfolio1} alt="Capture du portfolio 1" />
+                      </CarouselItem>
+                      <CarouselItem>
+                        <img src={portfolio2} alt="Capture du portfolio 2" />
+                      </CarouselItem>
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                  </Carousel>
+                </div>
+                <div className="flex justify-center my-8">
+                  <Tabs defaultValue="description" className="md:w-full">
+                    <TabsList className="grid w-full grid-cols-2">
+                      <TabsTrigger value="description">Description</TabsTrigger>
+                      <TabsTrigger value="stack">Stack</TabsTrigger>
+                    </TabsList>
+                    <TabsContent value="description">
+                      <p className="text-xs md:text-base italic">
+                        Le portfolio que vous êtes entrain de consulter.
+                      </p>
+                    </TabsContent>
+                    <TabsContent value="stack">
+                      <div className="flex flex-wrap gap-3 justify-center items-center">
+                        <img className="w-6" src={logoAdonis} alt="AdonisJS logo" />
+                        <img className="w-6" src={logoInertia} alt="Inertia logo" />
+                        <img className="w-6" src={logoReact} alt="React logo" />
+                        <img className="w-6" src={logoTypescript} alt="Typescript logo" />
+                        <img className="w-6" src={logoTailwind} alt="Tailwind CSS logo" />
+                        <img className="w-6" src={logoShadcn} alt="Shadcn UI logo" />
+                        <img className="w-6" src={logoMagicUi} alt="Magic UI logo" />
+                        <img className="w-6" src={logoMysql} alt="MySQL logo" />
+                      </div>
+                    </TabsContent>
+                  </Tabs>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
         <section className="mt-16" id="contact">
